@@ -29,7 +29,7 @@ int main()
 
     // INTRODUCTION
     cout << setfill('*') << setw(81) << "\n"
-         << setfill('*') << setw(55) << " Cheese Produced and Profit Calculator " << right << setfill('*') << setw(26) << "\n"
+         << setfill('*') << setw(60) << " Cheese Produced and Profit Calculator " << right << setfill('*') << setw(21) << "\n"
          << setfill('*') << setw(81) << "\n" << endl;
 
     // THIS WILL APPLY EVERY TIME WE USE "cout" UNLESS CHANGED
