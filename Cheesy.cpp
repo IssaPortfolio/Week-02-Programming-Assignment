@@ -29,7 +29,7 @@ int main()
 
     // INTRODUCTION
     cout << setfill('*') << setw(81) << "\n"
-         << setfill('*') << setw(55) << " Welcome to my Cheesy Program " << setfill('*') << setw(26) << "\n"
+         << setfill('*') << setw(55) << " Cheese Produced and Profit Calculator " << right << setfill('*') << setw(26) << "\n"
          << setfill('*') << setw(81) << "\n" << endl;
 
     // THIS WILL APPLY EVERY TIME WE USE "cout" UNLESS CHANGED
@@ -37,34 +37,32 @@ int main()
                                                               "setprecision(int)" IS AMOUNT OF NUMBERS AFTER DECIMAL POINT,
                                                               "setfill(char)" IS WHAT IS FILLED IN THE "setw(int)" FUNCTION  */
 
-    // ASKS USER TO INPUT A NUMBER
+    // (1) ASKS USER TO INPUT A NUMBER
     double cheese_produced_Input;  // DECLARING DOUBLE VARIABLE
     cout << "Please enter the total number of kilograms of cheese produced: "; 
     cin >> cheese_produced_Input;  // ASKS USER TO INPUT A NUMBER AND STORES IT IN THE DOUBLE VARIABLE
 
 
 
-    // CALCULATES CONTAINER AMOUNT AND OUTPUTS IT WITH A SENTENCE
+    // (2) CALCULATES CONTAINER AMOUNT AND OUTPUTS IT WITH A SENTENCE
     double container_amount_double = (cheese_produced_Input / CONTAINER_CAPACITY) + 1;  
     int container_amount = (int)container_amount_double;  /*  ASSIGNS "container_amount" TO WHAT THE INT VALUE WOULD BE OF "container_amount_double"
                                                               (THIS IS TO AVOID LOSS OF DATA WARNING/ERROR)  */ 
-
     const string CONTAINER_AMOUNT_SENTENCE = "The number of containers to hold the cheese is: ";
     cout << left << CONTAINER_AMOUNT_SENTENCE << setw(83 - CONTAINER_AMOUNT_SENTENCE.length()) << right << container_amount << endl;
 
 
 
-    // CALCULATES COST PER CONTAINER AND OUTPUTS IT WITH A SENTENCE
+    // (3) CALCULATES COST PER CONTAINER AND OUTPUTS IT WITH A SENTENCE
     double cost = container_amount * CONTAINER_COST;
     const string CONTAINER_COST_SENTENCE = "The cost of producing " + to_string(container_amount) + " container(s) of cheese is: ";
     cout << left << CONTAINER_COST_SENTENCE << setw(80 - CONTAINER_COST_SENTENCE.length()) << right << '$' << cost << endl;
 
 
-    // CALCULATES PROFIT PER CONTAINER AND OUTPUTS IT WITH A SENTENCE
+    // (4) CALCULATES PROFIT PER CONTAINER AND OUTPUTS IT WITH A SENTENCE
     double container_profit = container_amount * PROFIT;
     const string CONTAINER_PROFIT_SENTENCE = "The profit from producing " + to_string(container_amount) + " container(s) of cheese is: ";
     cout << left << CONTAINER_PROFIT_SENTENCE << setw(80 - CONTAINER_PROFIT_SENTENCE.length()) << right << '$' <<  container_profit << "\n" << endl;
-    
 
 
     // PAUSES COMMAND LINE RATHER THAN CLOSING
@@ -77,6 +75,13 @@ int main()
 /* 
 
 I can't get the output format to look exactly like how does in the exe file from Canvas. 
-I watched multiple YouTube videos and I have spend too much time on it and have given up. 
+I watched multiple YouTube videos and I have spend too much time.
+
+Let me explain what something like "cout << left << CONTAINER_COST_SENTENCE << setw(80 - CONTAINER_COST_SENTENCE.length()) << right << '$' << cost << endl;" does.
+so "cout" will output these things to the console. "left" is where things will be aligned (usually setw is defaulted to the left). "CONTAINER_COST_SENTENCE" is a string variable.
+In that string variable, everything assigned in it will be outputted. "setw(80)" sets the width of that output so when we do "setfill(char)" it will fill those in. 
+"CONTAINER_COST_SENTENCE.length()" gets length that is in that string ("hello" is 5 characters long), this is to keep things proportional regardless 
+of how many characters are in the string (to a certain limit of course). Then "right" is to keep the '$' and "cost" aligned to the right. "endl" creates a new line (similar to "\n").
+
 
 */
