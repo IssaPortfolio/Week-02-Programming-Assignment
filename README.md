@@ -17,6 +17,7 @@ NOTE1: You must use format manipulators in your program. If your program just us
 NOTE2: Use constants defined above the "main" function (see I/O Demo 2 in the Week #2 module) for any numbers that will not change. Don't "hard-code (Links to an external site.)" numbers.
 
 NOTE3: All numbers must align in a column as indicated in the example or you grade will be reduced.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MODIFIED: Changed Welcome Message to "Cheese Produced and Profit Calculator"
